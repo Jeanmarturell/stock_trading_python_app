@@ -11,7 +11,6 @@ LIMIT = 1000
 RATE_LIMIT_DELAY = 0.2  # 200ms delay between requests to respect rate limits
 
 url = f'https://api.massive.com/v3/reference/tickers?market=stocks&active=true&order=asc&limit={LIMIT}&sort=ticker&apiKey={POLYGON_API_KEY}'
-
 response = requests.get(url)
 tickers = []
 
@@ -20,20 +19,10 @@ for ticker in data['results']:
     tickers.append(ticker)
 
 while 'next_url' in data:
-    next_url = data['next_url']  # Store the next_url before making request
     time.sleep(RATE_LIMIT_DELAY)  # Add delay to respect rate limits
-    response = requests.get(next_url + f'&apiKey={POLYGON_API_KEY}')
+    response = requests.get(data['next_url'] + f'&apiKey={POLYGON_API_KEY}')
     data = response.json()
     
-    # Check if response contains an error
-    if data.get('status') == 'ERROR':
-        print(f"Error: {data.get('error')}")
-        print("Rate limit hit. Waiting before retrying...")
-        time.sleep(5)  # Wait 5 seconds before retrying
-        response = requests.get(next_url + f'&apiKey={POLYGON_API_KEY}')
-        data = response.json()
-    
-    # Only process results if they exist
     if 'results' in data:
         for ticker in data['results']:
             tickers.append(ticker)
