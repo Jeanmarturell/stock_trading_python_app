@@ -23,13 +23,9 @@ while 'next_url' in data:
     response = requests.get(data['next_url'] + f'&apiKey={POLYGON_API_KEY}')
     data = response.json()
     
-    if 'results' in data:
-        for ticker in data['results']:
-            tickers.append(ticker)
-    else:
-        print("No results in response, stopping pagination")
-        break
-
+    for ticker in data['results']:
+        tickers.append(ticker)
+    
 example_ticker = {
     'ticker': 'JLQD',
     'name': 'Janus Henderson Corporate Bond ETF', 
