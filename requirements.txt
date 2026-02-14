@@ -1,3 +1,4 @@
+snowflake.connector
 schedule
 requests
 openai
