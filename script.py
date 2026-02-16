@@ -133,7 +133,7 @@ def fetch_and_ingest_tickers_to_snowflake():
         
         # Dynamically build INSERT statement from COLUMN_MAPPING
         col_names = ', '.join(COLUMN_MAPPING.keys())
-        placeholders = ', '.join(['%s' for _ in COLUMN_MAPPING])  # Snowflake uses %s, not ?
+        placeholders = ', '.join([f'%s' for _ in COLUMN_MAPPING])  # Snowflake uses %s, not ?
         insert_sql = f"INSERT INTO {SNOWFLAKE_TABLE} ({col_names}) VALUES ({placeholders})"
         
         # Debug: Print SQL structure
