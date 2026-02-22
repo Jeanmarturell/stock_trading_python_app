@@ -4,17 +4,17 @@ A robust Python-based ETL pipeline that fetches real-time stock ticker data from
 
 ## 📋 Table of Contents
 
-- [Overview](#overview)
-- [Architecture](#architecture)
-- [Prerequisites](#prerequisites)
-- [Installation](#installation)
-- [Configuration](#configuration)
-- [Usage](#usage)
-- [Project Structure](#project-structure)
-- [Error Handling & Rate Limiting](#error-handling--rate-limiting)
-- [Monitoring & Scheduling](#monitoring--scheduling)
-- [License](#license)
-- [Contributing](#contributing)
+- [Overview](#Overview)
+- [Architecture](#Architecture)
+- [Prerequisites](#Prerequisites)
+- [Installation](#Installation)
+- [Configuration](#Configuration)
+- [Usage](#Usage)
+- [Project Structure](#Project-Structure)
+- [Error Handling & Rate Limiting](#Error-Handling--Rate-Limiting)
+- [Monitoring & Scheduling](#Monitoring--Scheduling)
+- [License](#License)
+- [Contributing](#Contributing)
 
 ## 🎯 Overview
 
@@ -61,7 +61,7 @@ This project automates the collection of stock market ticker data from Massive's
 ### 1. Clone the Repository
 
 ```bash
-git clone <your-repo-url>
+git clone https://github.com/Jeanmarturell/stock_trading_python_app
 cd stock_trading_python_app
 ```
 
