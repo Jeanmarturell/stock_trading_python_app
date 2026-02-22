@@ -21,7 +21,7 @@ A robust Python-based ETL pipeline that fetches real-time stock ticker data from
 This project automates the collection of stock market ticker data from Massive's comprehensive market data API and orchestrates batch ingestion into Snowflake. It implements production-grade practices including:
 
 - **Rate-limit aware pagination** - Respects API throttling with configurable delays
-- **Batch processing** - Optimized insertion in configurable batch sizes (default: 100 records)
+- **Batch processing** - Optimized insertion in configurable batch sizes (default: 1000 records)
 - **Error recovery** - Graceful handling of API failures with retry logic
 - **Data partitioning** - Daily snapshot partitioning via `ds` (date snapshot) column
 - **Scheduled execution** - Optional cron/Airflow integration for automated runs
