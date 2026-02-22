@@ -146,7 +146,7 @@ def fetch_and_ingest_tickers_to_snowflake():
             return tuple(ticker.get(field) for field in mapping.values())
         
         # Insert data in batches
-        batch_size = 100
+        batch_size = 1000
         for i in range(0, len(tickers), batch_size):
             batch = tickers[i:i+batch_size]
             data_to_insert = [extract_ticker_values(ticker, COLUMN_MAPPING) for ticker in batch]
